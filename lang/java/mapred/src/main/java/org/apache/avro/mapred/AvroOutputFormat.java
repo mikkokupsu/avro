@@ -154,7 +154,7 @@ public class AvroOutputFormat <T>
     GenericData dataModel = AvroJob.createDataModel(job);
 
     final DataFileWriter<T> writer =
-      new DataFileWriter<T>(dataModel.createDatumWriter(null));
+      new DataFileWriter<T>(dataModel.createDatumWriter(schema));
 
     configureDataFileWriter(writer, job);
 
